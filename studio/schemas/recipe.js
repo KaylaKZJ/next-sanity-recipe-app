@@ -2,7 +2,7 @@ export default {
   name: 'recipe',
   title: 'Recipe',
   type: 'document',
-  fileds: [
+  fields: [
     {
       name: 'name',
       title: 'Recipe Name',
