@@ -56,8 +56,39 @@ export default {
               },
             },
           ],
+
+          preview: {
+            select: {
+              title: 'ingredient.name',
+              name: 'ingredient.name',
+              media: 'ingredient.image',
+              wholeNumber: 'wholeNumber',
+              fraction: 'fraction',
+              unit: 'unit',
+            },
+            prepare({
+              title,
+              subtitle,
+              media,
+              wholeNumber = '(No whole number set)',
+              fraction = '(No fraction set)',
+              unit = '(No unit set)',
+            }) {
+              return {
+                title,
+                subtitle: `${wholeNumber} ${fraction} ${unit}`,
+                media,
+              };
+            },
+          },
         },
       ],
+    },
+    {
+      name: 'instructions',
+      title: 'Instructions',
+      type: 'array',
+      of: [{ title: 'Block', type: 'block' }],
     },
   ],
 };
